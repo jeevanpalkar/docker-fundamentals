@@ -1,0 +1,39 @@
+3. User Management
+==================
+
+
+root   ---------> SUper user   (sudo)
+
+
+        # useradd <user-name>    Ex:  useradd vishnu
+
+        # userdel <username>     Ex: userdel vishnu
+
+        # passwd <username>      Ex: passwd vishnu
+
+
+        # groupadd <user-name>   Ex: groupadd devops
+
+        # groupdel <user-name>   Ex: groupdel devops
+
+##Permissions
+
+Read                            Write                           Execute
+
+2^2                             2^1                             2^0
+
+4                               2                               1               =7
+
+
+
+
+chmod 777 file.txt
+
+users           Groups          Others
+
+
+## Ownership
+
+chown <user>:<group> file/dir
+
+        Ex:-     chown vishnu:devops file.txt

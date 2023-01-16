@@ -1,0 +1,35 @@
+pipeline(){
+ agent any
+ stages(){
+    stage('clean_up'){
+        steps{
+            sh '''
+            docker rmi -f myimage:1.0  && docker rm -f c1
+            '''
+        }
+    } 
+	stage('docker_file_gen'){
+		steps {
+		 sh '''
+		   
+		   echo "FROM centos:7 \nRUN yum install httpd wget -y\nRUN wget yahoo.com -O /var/www/html/index.html"  > /root/app/Dockerfile
+		 '''
+		}
+	}
+    stage('image_build'){
+        steps{
+            sh '''
+            docker build -t myimage:1.0 /root/app
+            '''
+        }
+    }
+    stage('docker_container'){
+        steps{
+            sh '''
+            docker run -d --name c1 myimage:1.0 
+            '''
+        }
+    }
+ }
+    
+}

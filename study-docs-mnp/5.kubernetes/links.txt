@@ -1,0 +1,12 @@
+https://k8syaml.com/
+
+
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+
+
+https://docs.openshift.com/container-platform/4.7/applications/deployments/what-deployments-are.html
+
+
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/

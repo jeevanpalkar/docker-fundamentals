@@ -1,0 +1,36 @@
+pipeline () {
+    agent any
+    stages(){
+        stage ('Slave 1 backup') {
+            
+             agent {
+                    label ('Slave01')
+             }
+            steps { 
+               
+                
+                
+                sh '''
+                mkdir -p /root/abhi/permanent/
+                cp -r /root/jenkins/ /root/abhi/permanent/ '''
+            }
+                
+                
+        }
+        stage ('Slave 2 backup') {
+            
+            agent {
+                    label ('Slave02')
+            }
+            steps {
+                
+                
+                sh ''' mkdir -p /root/abhi/permanent/
+                cp -r /root/jenkins/ /root/abhi/permanent/'''
+                
+                sh 'echo taken backup'
+            }
+        }
+    }
+	
+}

@@ -1,0 +1,12 @@
+---
+- name: myplaybook
+  hosts: app
+
+  tasks:
+     - name: task01
+       shell: hostname
+
+     - name: task02
+       shell: ifconfig
+
+...

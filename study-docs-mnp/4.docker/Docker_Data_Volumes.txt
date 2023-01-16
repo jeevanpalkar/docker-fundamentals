@@ -1,0 +1,61 @@
+Docker Data Volumes 
+===================
+A Docker container is similar to a virtual machine. It basically allows you to run a pre-packaged "Linux box" inside a container. The main difference between a Docker container and a typical virtual machine is that Docker is not quite as isolated from the surrounding environment as a normal virtual machine would be. A Docker container shares the Linux kernel with the host operating system, which means it doesn't need to "boot" the way a virtual machine would.
+
+Since so much is shared, firing up a Docker container is a quick and cheap operation — in most cases you can bring up a full Docker container (the equivalent of a normal virtual machine) in the same time as it would take to run a normal command line program. This is great because it makes deploying complex systems a much easier and more modular process, but it's a different paradigm from the usual virtual machine approach and has some unexpected side effects for people coming from the virtualization world.
+
+There are three main use cases for Docker data volumes:
+
+1.To keep data around when a container is removed
+2.To share data between the host filesystem and the Docker container
+3.To share data with other Docker containers
+
+Example:
+---------
+
+1.Create a new data volume container to store our volume:
+
+	# docker create -v /tmp --name mydata ubuntu
+
+This created a container named 'mydata' based off of the ubuntu image and in the directory /tmp.
+
+
+
+2.Start container
+
+	# docker run -it --volumes-from mydata ubuntu /bin/bash
+
+The -t command line options calls a terminal from inside the container. The -i flag makes the connection interactive.
+
+3. At the bash prompt for the ubuntu container, create a file in /tmp
+
+	# echo "My content crated by me" > /tmp/vishnu
+
+Now exit from container and create new container with same datavolume 'mydata'
+
+4. Creating new container with same volume 'mydata'
+
+	# docker run -it --volumes-from mydata ubuntu /bin/bash
+
+Now verify data under /tmp
+		# cat /tmp/vishnu
+		----output : My content crated by me
+
+
+
+Sharing Data between host and containers
+==========================================
+
+
+1. Start Container with this command 
+
+	# docker run -d -v /root/applogs:/var/log/nginx -p 9000:80 -i nginx
+
+Here ,
+	 -v /root/applogs:/var/log/nginx ---> We set up a volume that links the /var/log/nginx directory from inside the Nginx container to the /root/applogs directory on the host machine. Docker uses a : to split the host's path from the container path, and the host path always comes first.
+
+	-d — Detach the process and run in the background. Otherwise, we would just be watching an empty Nginx prompt and wouldn't be able to use this terminal until we killed Nginx.
+
+
+
+

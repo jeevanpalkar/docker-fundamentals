@@ -1,0 +1,28 @@
+2. Package Management
+=======================
+
+			File						Repo
+
+
+RPM: 			.rpm  Ex: tomcat.rpm				yum
+
+		Ex:- rpm -i tomcat.rpm				Ex:- yum install tomcat
+		     rpm -e tomcat.rpm				     yum remove tomcat
+		     rpm -q tomcat.rpm				     yum search tomcat
+
+
+
+
+
+
+
+
+Debian: 		.deb  Ex: tomcat.deb				apt/apt-get
+		Ex:- dpkg -i tomcat.deb				Ex:- apt install tomcat
+		     dpkg -e tomcat.deb				     apt remove tomcat
+		     dpkg -q tomcat.deb       			     apt search tomcat
+
+
+
+
+

@@ -1,0 +1,31 @@
+Docker Commands:
+================
+
+Images:
+-------
+# docker images    ---->  List out all the images
+# docker pull <img name>     ----> Download images from Docker hub
+# docker push <img name>     ----> Uploading images to Docker hub
+# docker build -t <imag name/ID> <Docker Script path>            ---------->  To build your own images using Docker script
+# docker rmi <img name/ID>                         -----------> To remove images
+# docker inspect <Image ID>                        -----------> To inspect(investigate) an image(s)
+
+
+Containers:
+-----------
+# docker ps  			-----> Find the running containers
+# docker ps -a                  -----> Find the all (stopped+running+created) containers  
+# docker run -it <img name/ID> <command>                      --------------> to create &start  a container
+	Ex:- docker run -it  -p 9000:80 <img name/ID> <command>
+
+# docker rm <container ID/Name>                                --------------> To remove a container
+# docker attach <container ID>				       --------------> To login to container
+# docker exec <Cont ID> <Command>                              ---------------> Exeecute a command inside container from the HOST
+# docker start <container ID/name>                  
+# docker stop <container ID/name>
+# docker pause <container ID/name>
+# docker restart <container ID/name>
+# docker commit <Container ID> <image name>                     ---------------> To take the snapshot(backup) of your container and saving as image
+# docker inspect <Container ID>                                 -----------> To inspect(investigate) an container(s)
+# docker cp /root <container ID>:/tmp			        ------------> copy files from host to container or vice-versa
+

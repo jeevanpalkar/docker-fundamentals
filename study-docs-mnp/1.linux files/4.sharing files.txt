@@ -1,0 +1,3 @@
+fallocate -l Image_Size_Here /path/to/image.img
+
+fallocate -l 100M myfile

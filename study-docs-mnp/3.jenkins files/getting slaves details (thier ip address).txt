@@ -1,0 +1,39 @@
+pipeline () {
+    agent any
+    stages (){
+        stage ('Slave01_build') {
+            agent {
+                label 'Slave01'
+            }
+            steps{
+                
+                sh ''' 
+				
+				echo 'this is working on slave01'
+				echo ' hostname is : `hostname` '
+				echo ' IpAddress is : `hostname -I` '
+				
+				
+				'''
+            }
+        }
+        
+    
+        stage ('Slave02_build') {
+            agent {
+                label 'Slave02'
+            }
+            steps{
+                sh ''' 
+				
+				echo 'this is working on slave02'
+				echo ' hostname is : `hostname` '
+				echo ' IpAddress is : `hostname -I` '
+				
+				
+				'''
+            }
+        }
+        
+    }    
+}

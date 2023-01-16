@@ -1,0 +1,48 @@
+1. File Handling (files, direc......)
+======================================
+
+- Directories
+	# mkdir <dir-name>  Ex:- mkdir mydir
+	
+	# cp <s-dir> <D-dir>  Ex:- cp mydir /tmp  (or) cp /root/mydir /tmp
+	
+	# mv <s-dir> <D-dir>  Ex:- mv mydir /tmp
+
+	# rm <dir-name>       Ex:- rm mydir
+	
+
+
+- Files
+	# touch <file-name>  Ex:- touch file.txt
+
+	# cp  <s-file> <D-file>   Ex:- cp file.txt /tmp/file.txt
+
+	# mv  <s-file> <D-file>   Ex:- mv file.txt /tmp/file.txt
+
+	# rm <file-name>	  Ex:- rm file.txt
+
+
+	# vi/vim file.txt
+	# nano file.txt
+	# gedit file.txt
+
+
+	# more file.txt
+	# less file.txt
+
+	# head file.txt
+	# tail file.txt
+
+	# cat file.txt 
+
+	# tar -czvf myfile.tar.gz file1 file2 ....
+	# tar -xzvf myfile.tar.gz
+
+	# find 
+	# grep
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+ vars:
+    aws_access_key: 
+    aws_secret_key: 
+    vpc_title: 
+    vpc_name: 
+    igw_name: 
+    subnet_name: 
+    acl_name: 
+    security_group_name: 
+    route_table_name: 
+    vpcCidrBlock: 
+    subNetCidrBlock: 
+    port22CidrBlock: 
+    destinationCidrBlock: 
+    state: 
+    
+    zone: 
+    region: 
